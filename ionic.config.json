@@ -1,0 +1,7 @@
+{
+  "name": "projetoChamada",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
