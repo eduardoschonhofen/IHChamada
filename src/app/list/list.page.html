@@ -1,27 +1,27 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      List
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+ion-content fullscreen>
+<ion-card>
+  <ion-card-header class="cardheader">
+    Fazer Login
+  </ion-card-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+  <ion-card-content>
+    <form>
+      <ion-item>
+        <ion-label>Usuário</ion-label>
+        <ion-input type="text" formControlName="usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>Senha</ion-label>
+          <ion-input type="password" formControlName="senha"></ion-input>
+        </ion-item>
+    </form>
+  </ion-card-content>
+
+  <ion-row class="cardfooter">
+    <ion-col>
+      <ion-button (click)="cadastrar()">Cadastrar</ion-button>
+      <ion-button (click)="logar()">Logar</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-card>
 </ion-content>
