@@ -4,17 +4,21 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
-    path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
+    path: 'inicio',
+    loadChildren: './inicio/inicio.module#InicioPageModule'
   },
   {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  }
+    path: 'login',
+    loadChildren: './login/login.module#LoginPageModule'
+  },
+  { path: 'geraQR', loadChildren: './gera-qr/gera-qr.module#GeraQRPageModule' },
+  { path: 'readQR', loadChildren: './read-qr/read-qr.module#ReadQRPageModule' },
+  { path: 'gera-qrionic', loadChildren: './gera-qrionic/gera-qrionic.module#GeraQRionicPageModule' }
+ 
 ];
 
 @NgModule({
@@ -23,4 +27,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

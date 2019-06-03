@@ -1,27 +1,28 @@
-ion-content fullscreen>
+<ion-content fullscreen>
 <ion-card>
   <ion-card-header class="cardheader">
     Fazer Login
   </ion-card-header>
 
   <ion-card-content>
-    <form>
+    <form [formGroup]="form">
       <ion-item>
-        <ion-label>Usuário</ion-label>
+        <ion-label position="floating">Usuário</ion-label>
         <ion-input type="text" formControlName="usuario"></ion-input>
       </ion-item>
       <ion-item>
-          <ion-label>Senha</ion-label>
+          <ion-label position="floating">Senha</ion-label>
           <ion-input type="password" formControlName="senha"></ion-input>
         </ion-item>
     </form>
-  </ion-card-content>
+
 
   <ion-row class="cardfooter">
     <ion-col>
       <ion-button (click)="cadastrar()">Cadastrar</ion-button>
-      <ion-button (click)="logar()">Logar</ion-button>
+      <ion-button [disabled]="form.controls['usuario'].invalid || form.controls['senha'].invalid" (click)="logar()">Logar</ion-button>
     </ion-col>
   </ion-row>
+</ion-card-content>
 </ion-card>
 </ion-content>
