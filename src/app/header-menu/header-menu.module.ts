@@ -4,25 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
+import { HeaderMenuComponent } from './header-menu.component';
 
-import { InicioPage } from './inicio.page';
-import { HeaderMenuPageModule } from '../header-menu/header-menu.module';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: InicioPage
-  }
-];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HeaderMenuPageModule,
-    RouterModule.forChild(routes)
+    
   ],
-  declarations: [InicioPage]
+  exports:[HeaderMenuComponent],
+  declarations: [HeaderMenuComponent]
 })
-export class InicioPageModule {}
+export class HeaderMenuPageModule {}

@@ -1,2 +1,5 @@
-<ngx-qrcode *ngIf="qrCode" [qrc-value]="qrCode"></ngx-qrcode>
-<ion-button (click)="conectarSocket()">Action Cable</ion-button>
+<app-header-menu titulo="Marcar Presença - Gerar QRCode"></app-header-menu>
+<div>
+    <ngx-qrcode *ngIf="qrCode" [qrc-value]="qrCode"></ngx-qrcode>
+</div>
+<ion-button (click)="conectarSocket()">Gerar QRCode</ion-button>

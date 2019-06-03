@@ -5,9 +5,15 @@
   
   ::ng-deep .qrcode img {
     image-rendering: pixelated;
-    width:75%;
-    height:75%;
+    width:90vh;
+    height:100vh;
     margin-left:auto;
     margin-right:auto;
     display: block;
+    padding-bottom:50px;
+  }
+
+  ::ng-deep .qrcode{
+    max-height:80vh;
+    overflow:hidden;
   }

@@ -9,6 +9,7 @@ import { GeraQRPage } from './gera-qr.page';
 import { HTTP } from '@ionic-native/http/ngx';
 import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { NgxQRCodeModule } from 'ngx-qrcode2';  //import this
+import { HeaderMenuPageModule } from '../header-menu/header-menu.module';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     NgxQRCodeModule,
+    HeaderMenuPageModule,
     RouterModule.forChild(routes)
   ],
   declarations: [GeraQRPage],

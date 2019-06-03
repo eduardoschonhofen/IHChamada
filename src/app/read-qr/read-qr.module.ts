@@ -11,6 +11,7 @@ import { HTTP } from '@ionic-native/http/ngx';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { Dialogs } from '@ionic-native/dialogs/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { HeaderMenuPageModule } from '../header-menu/header-menu.module';
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    HeaderMenuPageModule,
     RouterModule.forChild(routes)
   ],
   declarations: [ReadQRPage],

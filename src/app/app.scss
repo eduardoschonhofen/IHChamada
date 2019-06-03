@@ -7,4 +7,8 @@
 
 ion-app.cameraView, ion-app.cameraView ion-content, ion-app.cameraView .nav-decor {
     background: transparent none !important; 
+    //background-image: url([YOU CAN USE BASE64 image here!!]) !important;
+  }
+  .my-custom-menu {
+    --width: 500px;
   }
