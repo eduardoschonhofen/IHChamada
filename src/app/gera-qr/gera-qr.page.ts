@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 import { HTTP } from '@ionic-native/http/ngx';
 import * as ActionCable from 'actioncable';
+import { environment } from 'src/environments/environment';
+
+var URL_SOCKET=environment.URL_SOCKET;
+var URL_SCAN=environment.URL_SCAN;
 @Component({
   selector: 'app-gera-qr',
   templateUrl: './gera-qr.page.html',
@@ -16,16 +20,12 @@ export class GeraQRPage implements OnInit {
 
 
   conectarSocket()
-  {
-   
-      this.qrCode="321123321";
-      let cable=ActionCable.createConsumer('ws://200.180.162.179:3000/cable');
+  {   
+     // this.qrCode="321123321";
+      let cable=ActionCable.createConsumer(URL_SOCKET);
       let conexao=conexaosocket.bind(this,this.http);
       cable.subscriptions.create('RoomChannel',conexao);
 
-    
-    
-    
   }
 }
 
@@ -42,7 +42,7 @@ let conexaosocket={
   {
   //  this.val.qrCode="1q23";
   //  console.log(data);
-    this.http.get('http://200.180.162.179:3000/interface/scan?code=eae',{},{}).then(data=>{
+    this.http.get(URL_SCAN,{discipline:"1",code:"eae"},{}).then(data=>{
       console.log(data);
     })
   },
@@ -52,7 +52,7 @@ let conexaosocket={
   },
   received:function(data)
   {
-    this.val.qrCode=data.code;
-    console.log(data.code);
+    this.val.qrCode=JSON.stringify(data);
+    console.log(data);
   }
 }

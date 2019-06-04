@@ -1,9 +1,50 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>cadastro</ion-title>
+    <ion-title>Cadastro</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <form [formGroup]="form">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" formControlName="senha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Cartão da UFRGS</ion-label>
+      <ion-input type="number" formControlName="cartao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-radio-group>
+        <ion-list-header>
+          <ion-label>Você é:</ion-label>
+        </ion-list-header>
 
+        <ion-item>
+          <ion-label>Aluno</ion-label>
+          <ion-radio slot="start" value="aluno" checked formControlName="tipo"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Professor</ion-label>
+          <ion-radio slot="start" value="professor" formControlName="tipo"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+
+  </form>
+  <ion-row class="cardfooter">
+    <ion-col>
+      <ion-button (click)="cadastrar()">Cadastrar</ion-button>
+    </ion-col>
+  </ion-row>
 </ion-content>

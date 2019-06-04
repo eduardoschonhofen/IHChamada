@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  URL_LOGIN:"http://177.6.47.139:3000/login" ,
+  URL_SOCKET:"ws://177.6.47.139:3000/cable",
+  URL_SCAN:"http://177.6.47.139:3000/interface/scan"
+
 };
 
 /*
