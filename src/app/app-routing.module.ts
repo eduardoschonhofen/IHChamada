@@ -17,7 +17,8 @@ const routes: Routes = [
   },
   { path: 'geraQR', loadChildren: './gera-qr/gera-qr.module#GeraQRPageModule' },
   { path: 'readQR', loadChildren: './read-qr/read-qr.module#ReadQRPageModule' },
-  { path: 'gera-qrionic', loadChildren: './gera-qrionic/gera-qrionic.module#GeraQRionicPageModule' },
+  { path: 'gera-qrionic', loadChildren: './gera-qrionic/gera-qrionic.module#GeraQRionicPageModule' },  { path: 'cadastro', loadChildren: './cadastro/cadastro.module#CadastroPageModule' },
+
 ];
 
 @NgModule({
