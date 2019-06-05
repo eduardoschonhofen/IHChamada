@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RouterOutlet, Router } from '@angular/router';
+import { CadastroService } from '../services/cadastro.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -9,7 +10,7 @@ import { RouterOutlet, Router } from '@angular/router';
 })
 export class CadastroPage implements OnInit {
   form;
-  constructor( private formBuilder: FormBuilder,private router:Router){}
+  constructor( private formBuilder: FormBuilder,private router:Router,private cadastroService:CadastroService){}
 
 
   ngOnInit() {
@@ -25,7 +26,14 @@ export class CadastroPage implements OnInit {
 
   cadastrar()
   {
-    this.router.navigateByUrl('/cadastro');
+    let cartao=this.form.get('cartao').value;
+    let nome=this.form.get('nome').value;
+    let senha=this.form.get('senha').value;
+    let tipo=this.form.get('tipo').value;
+    let email=this.form.get('email').value;
+    this.cadastroService.cadastrar(cartao,nome,senha,tipo,email).then(val=>{
+
+    })
   }
 
 }
