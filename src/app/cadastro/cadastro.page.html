@@ -30,12 +30,12 @@
 
         <ion-item>
           <ion-label>Aluno</ion-label>
-          <ion-radio slot="start" value="aluno" checked formControlName="tipo"></ion-radio>
+          <ion-radio slot="start" value="Student" (click)="selectStudent()" checked formControlName="tipo"></ion-radio>
         </ion-item>
 
         <ion-item>
           <ion-label>Professor</ion-label>
-          <ion-radio slot="start" value="professor" formControlName="tipo"></ion-radio>
+          <ion-radio slot="start" value="Professor" (click)="selectProfessor()" formControlName="tipo"></ion-radio>
         </ion-item>
 
       </ion-radio-group>
@@ -47,4 +47,6 @@
       <ion-button (click)="cadastrar()">Cadastrar</ion-button>
     </ion-col>
   </ion-row>
+
+  <div *ngIf="errors">{{errors}}</div>
 </ion-content>

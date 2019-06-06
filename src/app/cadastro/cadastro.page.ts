@@ -10,30 +10,53 @@ import { CadastroService } from '../services/cadastro.service';
 })
 export class CadastroPage implements OnInit {
   form;
+  errors;
   constructor( private formBuilder: FormBuilder,private router:Router,private cadastroService:CadastroService){}
-
+  tipo="Student"
 
   ngOnInit() {
     this.form=this.formBuilder.group({
-      email:['',Validators.required,Validators.min(6)],
-      cartao:['',Validators.required,Validators.min(6)],
-      nome:['',Validators.required,Validators.min(6)],
-      senha:['',Validators.required,Validators.min(6)],
-      tipo:['',Validators.required]
+      email:['',[Validators.required,Validators.min(6)]],
+      cartao:['',[Validators.required,Validators.min(6)]],
+      nome:['',[Validators.required,Validators.min(6)]],
+      senha:['',[Validators.required,Validators.min(6)]],
+      tipo:['Student',Validators.required]
     })
   }
 
 
   cadastrar()
   {
-    let cartao=this.form.get('cartao').value;
+    let cartao:Number =this.form.get('cartao').value;
     let nome=this.form.get('nome').value;
     let senha=this.form.get('senha').value;
     let tipo=this.form.get('tipo').value;
     let email=this.form.get('email').value;
-    this.cadastroService.cadastrar(cartao,nome,senha,tipo,email).then(val=>{
-
+    let cartaoStr=cartao.toString();
+    if(cartaoStr.length<8)
+    {
+      cartaoStr=cartaoStr.padStart(8,'0');
+    }
+    console.log(cartaoStr);
+    this.cadastroService.cadastrar(cartaoStr,senha,nome,this.tipo,email).then(val=>{
+      let data=JSON.parse(val.data);
+      if(!data.saved)
+      {
+        this.errors=data.error;
+      }
+      else{
+        this.router.navigateByUrl('');
+      }
     })
+  }
+
+  selectStudent()
+  {
+    this.tipo="Student";
+  }
+  selectProfessor()
+  {
+    this.tipo="Professor";
   }
 
 }

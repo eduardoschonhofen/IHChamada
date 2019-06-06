@@ -11,6 +11,6 @@ export class CadastroService {
 
   cadastrar(cartao,senha,nome,tipo,email)
   {
-    return this.http.post(URL_CADASTRO,{card_number:cartao,password:senha,name:nome,type:tipo,email:email},{});
+    return this.http.post(URL_CADASTRO,{card_number:cartao,password:senha,name:nome,user_type:tipo,email:email},{});
   }
 }
