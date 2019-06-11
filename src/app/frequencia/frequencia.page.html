@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>frequencia</ion-title>
+    <app-header-menu></app-header-menu>
+    <ion-title>Frêquencia</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label>Selecione a Disciplina:</ion-label>
+    <ion-select [compareWith]="compareWith">
+      <ion-select-option *ngFor="let turma of turmas">
+        {{turma.nome}}
+      </ion-select-option>
 
+    </ion-select>
+  </ion-item>
 </ion-content>

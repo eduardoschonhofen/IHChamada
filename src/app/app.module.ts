@@ -10,13 +10,16 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { HTTP } from '@ionic-native/http/ngx';
+import { IonicStorageModule } from '@ionic/storage';
+import { DisciplinasPipe } from './disciplinas.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DisciplinasPipe],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
     AppRoutingModule,
 
   ],

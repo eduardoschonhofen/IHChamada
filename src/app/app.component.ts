@@ -35,8 +35,14 @@ export class AppComponent {
       title: 'Visualizar Frequências',
       url: '/frequencia',
       icon: 'list'
+    },
+    {
+      title: 'Logout',
+      func: 'logout()',
+      icon: 'list'
     }];
   }
+
 
   constructor(
     private platform: Platform,
@@ -59,5 +65,10 @@ export class AppComponent {
         this.mudarPageAluno();
       }
     })
+  }
+  
+  logout()
+  {
+    this.loginService.logout();
   }
 }

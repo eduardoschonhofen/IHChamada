@@ -5,13 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FrequenciaPage } from './frequencia.page';
-import { HeaderMenuPageModule } from '../header-menu/header-menu.module';
+import { TurmasPage } from './turmas.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: FrequenciaPage
+    component: TurmasPage
   }
 ];
 
@@ -20,9 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    HeaderMenuPageModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [FrequenciaPage]
+  declarations: [TurmasPage]
 })
-export class FrequenciaPageModule {}
+export class TurmasPageModule {}
