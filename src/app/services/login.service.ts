@@ -19,13 +19,14 @@ export class LoginService {
       let valor = JSON.parse(val.data);
       console.log(valor);
       if (valor.status) {
-        let cookie = val.headers.get('SetCookies');
-        this.cookieService.setCookie(cookie).then(val => {
+      //  let cookie = val.headers.get('SetCookies');
+      console.log(val.headers);
+       // this.cookieService.setCookie(cookie).then(val => {
           this.userTypeService.set(valor.user_type, user, password);
           this.router.navigateByUrl('/inicio');
           this.$logou.next(true);
 
-        });
+      //  });
 
       }
     })

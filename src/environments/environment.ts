@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  URL_LOGIN:"http://177.6.47.139:3000/login" ,
-  URL_SOCKET:"ws://177.6.47.139:3000/cable",
-  URL_SCAN:"http://177.6.47.139:3000/interface/scan",
-  URL_CADASTRO:"http://177.6.47.139:3000/accounts/create",
+  URL_LOGIN:"https://ihc-project.herokuapp.com/login" ,
+  URL_SOCKET:"ws://ihc-project.herokuapp.com/cable",
+  URL_SCAN:"https://ihc-project.herokuapp.com/interface/scan",
+  URL_CADASTRO:"https://ihc-project.herokuapp.com/accounts/create",
   URL_DISCIPLINA_ALUNO:"",
   URL_DISCIPLINAS:"",
   URL_ENTRAR_TURMA:"",

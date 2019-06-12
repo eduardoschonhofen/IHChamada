@@ -22,7 +22,6 @@ export class HttpService {
     return this.cookieService.getCookie().then(cookie=>{
       header={'Cookie':cookie};
       return this.http.get(url,data,header);
-
     })
   }
 }

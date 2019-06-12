@@ -11,7 +11,7 @@ export class DisciplinaService {
 
   constructor(private http:HttpService) { }
 
-  Promise getDisciplinasMatriculadas()
+   getDisciplinasMatriculadas()
   {
     return this.http.get(URL_DISCIPLINA_ALUNO,{},{});
   }
