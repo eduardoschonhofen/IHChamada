@@ -11,22 +11,25 @@ var LOGIN_URL = environment.URL_LOGIN;
   providedIn: 'root'
 })
 export class LoginService {
-  $logou = new BehaviorSubject<boolean>(false);
+  $logou = new BehaviorSubject<String>('');
   constructor(private http: HTTP, private router: Router, private userTypeService: UserTypeService, private cookieService: CookieService) { }
 
   login(user, password) {
     return this.http.post(LOGIN_URL, { card_number: user, password: password }, {}).then(val => {
       let valor = JSON.parse(val.data);
-      console.log(valor);
       if (valor.status) {
-      //  let cookie = val.headers.get('SetCookies');
-      console.log(val.headers);
-       // this.cookieService.setCookie(cookie).then(val => {
+        let cookie = valor.auth_token;
+        this.cookieService.setCookie(cookie).then(val => {
+
+          if(valor.user_type=="Student")
+          this.$logou.next("Student");
+          else if(valor.user_type=="Professor")
+          this.$logou.next("Professor");
+          
           this.userTypeService.set(valor.user_type, user, password);
           this.router.navigateByUrl('/inicio');
-          this.$logou.next(true);
-
-      //  });
+       
+        });
 
       }
     })

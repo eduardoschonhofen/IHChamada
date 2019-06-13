@@ -3,6 +3,7 @@ import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 import { HTTP } from '@ionic-native/http/ngx';
 import * as ActionCable from 'actioncable';
 import { environment } from 'src/environments/environment';
+import { HttpService } from '../services/httpService/http.service';
 
 var URL_SOCKET=environment.URL_SOCKET;
 var URL_SCAN=environment.URL_SCAN;
@@ -13,7 +14,7 @@ var URL_SCAN=environment.URL_SCAN;
 })
 export class GeraQRPage implements OnInit {
   qrCode;
-  constructor(private http:HTTP,private qrScanner: QRScanner) { }
+  constructor(private http:HttpService,private qrScanner: QRScanner) { }
 
   ngOnInit() {
   }

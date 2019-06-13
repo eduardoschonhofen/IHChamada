@@ -1,0 +1,66 @@
+
+ <app-header-menu titulo="Cadastrar Turma"></app-header-menu>
+ <ion-content>
+  <form [formGroup]="form">
+    <ion-item>
+      <ion-label position="floating">Nome da Disciplina:</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descrição:</ion-label>
+      <ion-input type="password" formControlName="descricao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Horário Inicial:</ion-label>
+      <ion-input type="number" formControlName="inicio"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Horário Final</ion-label>
+      <ion-input type="text" formControlName="fim"></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-radio-group>
+        <ion-list-header>
+          <ion-label>Dias da Semana:</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Segunda-Feira</ion-label>
+          <ion-radio slot="start" value="false" (click)="selectDia(1)" checked ></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Terça-Feira</ion-label>
+          <ion-radio slot="start" value="false" (click)="selectDia(2)" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Quarta-Feira</ion-label>
+          <ion-radio slot="start" value="false" (click)="selectDia(3)" checked ></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Quinta-Feira</ion-label>
+          <ion-radio slot="start" value="false" (click)="selectDia(4)" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Sexta-Feira</ion-label>
+          <ion-radio slot="start" value="false" (click)="selectDia(5)" checked ></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Sábado</ion-label>
+          <ion-radio slot="start" value="false" (click)="selectDia(6)" ></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+
+  </form>
+  <ion-row class="cardfooter">
+    <ion-col>
+      <ion-button (click)="cadastrar()">Cadastrar</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="errors">{{errors}}</div>
+</ion-content>

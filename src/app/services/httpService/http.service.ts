@@ -12,7 +12,7 @@ export class HttpService {
   post(url,data,header)
   {
   return  this.cookieService.getCookie().then(cookie=>{
-      header={'Cookie':cookie};
+    data.auth_token=cookie;
       return this.http.post(url,data,header);
     })
   }
@@ -20,7 +20,7 @@ export class HttpService {
   get(url,data,header)
   {
     return this.cookieService.getCookie().then(cookie=>{
-      header={'Cookie':cookie};
+      data.auth_token=cookie;
       return this.http.get(url,data,header);
     })
   }

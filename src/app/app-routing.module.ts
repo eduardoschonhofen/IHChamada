@@ -20,6 +20,8 @@ const routes: Routes = [
   { path: 'gera-qrionic', loadChildren: './gera-qrionic/gera-qrionic.module#GeraQRionicPageModule' },  { path: 'cadastro', loadChildren: './cadastro/cadastro.module#CadastroPageModule' },
   { path: 'frequencia', loadChildren: './frequencia/frequencia.module#FrequenciaPageModule' },
   { path: 'turmas', loadChildren: './turmas/turmas.module#TurmasPageModule' },
+  { path: 'cadastrar-turma', loadChildren: './cadastrar-turma/cadastrar-turma.module#CadastrarTurmaPageModule' },
+  { path: 'listar-turmas', loadChildren: './listar-turmas/listar-turmas.module#ListarTurmasPageModule' },
 
 ];
 

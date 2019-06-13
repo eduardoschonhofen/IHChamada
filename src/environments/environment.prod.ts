@@ -7,4 +7,5 @@ export const environment = {
   URL_DISCIPLINA_ALUNO:"",
   URL_DISCIPLINAS:"",
   URL_ENTRAR_TURMA:"",
+  URL_CADASTRO_DISCIPLINA:""
 };

@@ -5,13 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TurmasPage } from './turmas.page';
+import { ListarTurmasPage } from './listar-turmas.page';
 import { HeaderMenuPageModule } from '../header-menu/header-menu.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: TurmasPage
+    component: ListarTurmasPage
   }
 ];
 
@@ -23,6 +23,6 @@ const routes: Routes = [
     HeaderMenuPageModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [TurmasPage]
+  declarations: [ListarTurmasPage]
 })
-export class TurmasPageModule {}
+export class ListarTurmasPageModule {}
