@@ -11,7 +11,7 @@ export class ListarTurmasService {
 
   listarTurmas()
   {
-    return this.http.get(LISTAR_TURMAS_URL,{},{}).then(val=>{
+    return this.http.post(LISTAR_TURMAS_URL,{},{}).then(val=>{
       return val.data;
     })
   }

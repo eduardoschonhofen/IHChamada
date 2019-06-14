@@ -10,9 +10,9 @@ export const environment = {
   URL_CADASTRO:"https://ihc-project.herokuapp.com/accounts/create",
   URL_DISCIPLINA_ALUNO:"https://ihc-project.herokuapp.com/disciplines/index",
   URL_DISCIPLINAS:"https://ihc-project.herokuapp.com/disciplines/index",
-  URL_ENTRAR_TURMA:"https://ihc-project.herokuapp.com/disciplines/show",
+  URL_ENTRAR_TURMA:"https://ihc-project.herokuapp.com/disciplines/attendances",
   URL_CADASTRO_DISCIPLINA:"https://ihc-project.herokuapp.com/disciplines/create",
-  URL_FREQUENCIA_DISCIPLINA:""
+  URL_FREQUENCIA_DISCIPLINA:"https://ihc-project.herokuapp.com/disciplines/attendances"
 
 };
 

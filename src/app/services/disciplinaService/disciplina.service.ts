@@ -18,17 +18,19 @@ export class DisciplinaService {
   }
   getDisciplinas()
   {
-    return this.http.get(URL_DISCIPLINAS,{},{});
+    return this.http.post(URL_DISCIPLINAS,{},{});
   }
 
   entrarTurma(password)
   {
-    return this.http.get(URL_ENTRAR_TURMA,{password:password},{});
+    return this.http.post(URL_ENTRAR_TURMA,{password:password},{});
   }
 
   getFrequenciaDisciplina(id)
   {
-    return this.http.get(URL_FREQUENCIA_DISCIPLINA,{id:id},{});
+    return this.http.post(URL_FREQUENCIA_DISCIPLINA,{id:id},{}).then(val=>{
+      return JSON.parse(val.data);
+    });
   }
 
 }

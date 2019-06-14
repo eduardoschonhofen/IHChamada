@@ -9,9 +9,9 @@ export class CadastroDisciplinaService {
 
   constructor(private http:HttpService) { }
 
-  cadastrar(nome,descricao,inicio,fim,dias)
+  cadastrar(nome,descricao,inicio,fim,dias,senha)
   {
-    return this.http.post(URL_CADASTRAR_TURMA,{nome,descricao,inicio,fim,dias},{}).then(val=>{
+    return this.http.post(URL_CADASTRAR_TURMA,{name:nome,desc:descricao,start:inicio,end:fim,week:dias,password:senha},{}).then(val=>{
       return val;
     })
   }

@@ -12,7 +12,9 @@ turmas;
 
   ngOnInit() {
     this.turmasService.listarTurmas().then(val=>{
-      this.turmas=val;
+
+      this.turmas=JSON.parse(val).disciplines;
+    
     })
   }
 

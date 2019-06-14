@@ -22,6 +22,7 @@ export class CadastrarTurmaPage implements OnInit {
       fim:['',[Validators.required,Validators.min(6)]],
       descricao:['',[Validators.required,Validators.min(6)]],
       senha:['',[Validators.required,Validators.min(6)]],
+      nome:['',[Validators.required,Validators.min(6)]],
     
     })
   }
@@ -34,7 +35,7 @@ export class CadastrarTurmaPage implements OnInit {
     let descricao=this.form.get('descricao').value;
     let inicio=this.form.get('inicio').value;
     let fim=this.form.get('fim').value;
-
+    let senha=this.form.get('senha').value;
     let obj={segunda:false,terca:false,quarta:false,quinta:false,sexta:false,sabado:false};
     obj.segunda=this.dia[1];
     obj.terca=this.dia[2];
@@ -43,7 +44,7 @@ export class CadastrarTurmaPage implements OnInit {
     obj.sexta=this.dia[5];
     obj.sabado=this.dia[6];
 
-    this.cadastroDisciplinaService.cadastrar(nome,descricao,inicio,fim,JSON.stringify(obj)).then(val=>{
+    this.cadastroDisciplinaService.cadastrar(nome,descricao,inicio,fim,JSON.stringify(obj),senha).then(val=>{
       let data=JSON.parse(val.data);
 
         this.router.navigateByUrl('');

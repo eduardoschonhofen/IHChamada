@@ -37,6 +37,40 @@ export class AppComponent {
       icon: 'list'
     },
     {
+      title: 'Visualizar Turmas',
+      url: '/listar-turmas',
+      icon: 'list'
+    },
+    {
+      title: 'Logout',
+      func: 'logout()',
+      icon: 'list'
+    }];
+  }
+
+  mudarPageProfessor()
+  {
+    this.appPages=[    {
+      title: 'Inicio',
+      url: '/inicio',
+      icon: 'home'
+    },
+    {
+      title: 'Scan',
+      url: '/readQR',
+      icon: 'list'
+    },
+    {
+      title: 'Gerar QR',
+      url: '/geraQR',
+      icon: 'list'
+    },
+    {
+      title: 'Criar Turma',
+      url: '/cadastrar-turma',
+      icon: 'list'
+    },
+    {
       title: 'Logout',
       func: 'logout()',
       icon: 'list'
@@ -60,9 +94,17 @@ export class AppComponent {
     });
 
     this.loginService.getLogou().subscribe(val=>{
-      if(val)
+      if(val=="Student")
       {
         this.mudarPageAluno();
+      }
+      else if(val=="Professor")
+      {
+        this.mudarPageProfessor();
+      }
+      else
+      {
+        this.appPages=[];
       }
     })
   }
