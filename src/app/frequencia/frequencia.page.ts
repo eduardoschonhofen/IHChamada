@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DisciplinaService } from '../services/disciplinaService/disciplina.service';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-frequencia',
@@ -7,23 +8,23 @@ import { DisciplinaService } from '../services/disciplinaService/disciplina.serv
   styleUrls: ['./frequencia.page.scss'],
 })
 export class FrequenciaPage implements OnInit {
-
-  constructor(private disciplinasService:DisciplinaService) { }
+  disciplinas;
+  constructor(private disciplinasService:DisciplinaService,private router:Router) { }
 
   ngOnInit() {
     this.disciplinasService.getDisciplinasMatriculadas().then(disciplinas=>{
       if(disciplinas.data)
       {
-        
+        this.disciplinas=disciplinas.data;
       }
     });
   }
 
-  compareWithFn = (o1, o2) => {
-    return o1 && o2 ? o1.id === o2.id : o1 === o2;
-  };
-
-  compareWith = this.compareWithFn;
-
-
+  selecionaDisciplina(index)
+  {
+    let extra:NavigationExtras = {queryParams:{
+      disciplina:JSON.stringify(this.disciplinas[index])
+    }}
+    this.router.navigateByUrl('/frequencia-disciplina',);
+  }
 }

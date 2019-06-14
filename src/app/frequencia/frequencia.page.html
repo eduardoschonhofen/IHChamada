@@ -3,13 +3,15 @@
 
 
 <ion-content>
-  <ion-item>
-    <ion-label>Selecione a Disciplina:</ion-label>
-    <ion-select [compareWith]="compareWith">
-      <ion-select-option *ngFor="let turma of turmas">
-        {{turma.nome}}
-      </ion-select-option>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Selecione a Disciplina:</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div *ngFor="let disciplina of disciplinas;let i=index" (click)="selecionaDisciplina(i)">
+        {{disciplina.name}}
+      </div>
 
-    </ion-select>
-  </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

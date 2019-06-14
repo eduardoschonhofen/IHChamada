@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'turmas', loadChildren: './turmas/turmas.module#TurmasPageModule' },
   { path: 'cadastrar-turma', loadChildren: './cadastrar-turma/cadastrar-turma.module#CadastrarTurmaPageModule' },
   { path: 'listar-turmas', loadChildren: './listar-turmas/listar-turmas.module#ListarTurmasPageModule' },
+  { path: 'frequencia-disciplina', loadChildren: './frequencia-disciplina/frequencia-disciplina.module#FrequenciaDisciplinaPageModule' },
 
 ];
 
