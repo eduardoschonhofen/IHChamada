@@ -5,13 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FrequenciaDisciplinaPage } from './frequencia-disciplina.page';
-import { HeaderMenuPageModule } from '../header-menu/header-menu.module';
+import { FrequenciaPage } from './frequencia.page';
+import { HeaderMenuPageModule } from '../../header-menu/header-menu.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: FrequenciaDisciplinaPage
+    component: FrequenciaPage
   }
 ];
 
@@ -23,6 +23,6 @@ const routes: Routes = [
     HeaderMenuPageModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [FrequenciaDisciplinaPage]
+  declarations: [FrequenciaPage]
 })
-export class FrequenciaDisciplinaPageModule {}
+export class FrequenciaPageModule {}

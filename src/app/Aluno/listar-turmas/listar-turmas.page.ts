@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ListarTurmasService } from '../services/listarTurmasService/listar-turmas.service';
+import { ListarTurmasService } from '../../services/listarTurmasService/listar-turmas.service';
 
 @Component({
   selector: 'app-listar-turmas',

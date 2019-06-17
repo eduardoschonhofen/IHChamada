@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ListarTurmasPage } from './listar-turmas.page';
-import { HeaderMenuPageModule } from '../header-menu/header-menu.module';
+import { HeaderMenuPageModule } from '../../header-menu/header-menu.module';
 
 const routes: Routes = [
   {

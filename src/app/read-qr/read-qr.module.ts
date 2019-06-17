@@ -12,6 +12,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { Dialogs } from '@ionic-native/dialogs/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { HeaderMenuPageModule } from '../header-menu/header-menu.module';
+import { LeitorQRService } from '../services/leitorQR/leitor-qr.service';
 
 const routes: Routes = [
   {
@@ -29,6 +30,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [ReadQRPage],
-  providers:[QRScanner,HTTP,BarcodeScanner,Dialogs,AndroidPermissions]
+  providers:[QRScanner,HTTP,BarcodeScanner,Dialogs,AndroidPermissions,LeitorQRService]
 })
 export class ReadQRPageModule {}

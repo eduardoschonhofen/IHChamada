@@ -17,12 +17,14 @@ const routes: Routes = [
   },
   { path: 'geraQR', loadChildren: './gera-qr/gera-qr.module#GeraQRPageModule' },
   { path: 'readQR', loadChildren: './read-qr/read-qr.module#ReadQRPageModule' },
-  { path: 'gera-qrionic', loadChildren: './gera-qrionic/gera-qrionic.module#GeraQRionicPageModule' },  { path: 'cadastro', loadChildren: './cadastro/cadastro.module#CadastroPageModule' },
-  { path: 'frequencia', loadChildren: './frequencia/frequencia.module#FrequenciaPageModule' },
-  { path: 'turmas', loadChildren: './turmas/turmas.module#TurmasPageModule' },
-  { path: 'cadastrar-turma', loadChildren: './cadastrar-turma/cadastrar-turma.module#CadastrarTurmaPageModule' },
-  { path: 'listar-turmas', loadChildren: './listar-turmas/listar-turmas.module#ListarTurmasPageModule' },
-  { path: 'frequencia-disciplina', loadChildren: './frequencia-disciplina/frequencia-disciplina.module#FrequenciaDisciplinaPageModule' },
+  { path: 'cadastro', loadChildren: './cadastro/cadastro.module#CadastroPageModule' },
+  { path: 'frequencia', loadChildren: './Aluno/frequencia/frequencia.module#FrequenciaPageModule' },
+  { path: 'turmas', loadChildren: './Aluno/turmas/turmas.module#TurmasPageModule' },
+  { path: 'cadastrar-turma', loadChildren: './Professor/cadastrar-turma/cadastrar-turma.module#CadastrarTurmaPageModule' },
+  { path: 'listar-turmas', loadChildren: './Aluno/listar-turmas/listar-turmas.module#ListarTurmasPageModule' },
+  { path: 'frequencia-disciplina', loadChildren: './Aluno/frequencia-disciplina/frequencia-disciplina.module#FrequenciaDisciplinaPageModule' },  { path: 'ver-turma', loadChildren: './Professor/ver-turma/ver-turma.module#VerTurmaPageModule' },
+  { path: 'scanear-codigo-aluno', loadChildren: './Professor/scanear-codigo-aluno/scanear-codigo-aluno.module#ScanearCodigoAlunoPageModule' },
+
 
 ];
 

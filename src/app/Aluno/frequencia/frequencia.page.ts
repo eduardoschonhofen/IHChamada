@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DisciplinaService } from '../services/disciplinaService/disciplina.service';
+import { DisciplinaService } from '../../services/disciplinaService/disciplina.service';
 import { Router, NavigationExtras } from '@angular/router';
 
 @Component({

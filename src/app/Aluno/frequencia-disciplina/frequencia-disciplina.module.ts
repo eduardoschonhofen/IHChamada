@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
-import { CadastroPage } from './cadastro.page';
 
+import { FrequenciaDisciplinaPage } from './frequencia-disciplina.page';
+import { HeaderMenuPageModule } from '../../header-menu/header-menu.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: CadastroPage
+    component: FrequenciaDisciplinaPage
   }
 ];
 
@@ -19,9 +20,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReactiveFormsModule,
+    HeaderMenuPageModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [CadastroPage]
+  declarations: [FrequenciaDisciplinaPage]
 })
-export class CadastroPageModule {}
+export class FrequenciaDisciplinaPageModule {}
