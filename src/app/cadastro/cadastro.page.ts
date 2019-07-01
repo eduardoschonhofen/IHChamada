@@ -16,12 +16,14 @@ export class CadastroPage implements OnInit {
 
   ngOnInit() {
     this.form=this.formBuilder.group({
-      email:['',[Validators.required,Validators.min(6)]],
-      cartao:['',[Validators.required,Validators.min(6)]],
-      nome:['',[Validators.required,Validators.min(6)]],
-      senha:['',[Validators.required,Validators.min(6)]],
+      email:['',[Validators.required,Validators.minLength(6)]],
+      cartao:['',[Validators.required,Validators.minLength(6)]],
+      nome:['',[Validators.required,Validators.minLength(6)]],
+      senha:['',[Validators.required,Validators.minLength(8),Validators.pattern(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)]],
       tipo:['Student',Validators.required]
     })
+
+    
   }
 
 

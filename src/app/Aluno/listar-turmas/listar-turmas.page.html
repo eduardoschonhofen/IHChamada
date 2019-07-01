@@ -3,8 +3,11 @@
 
 <ion-content>
 
-  <div *ngFor="let turma of turmas">
-
-    <p>{{turma.name}}</p>
-  </div>
+  <ion-list><div *ngFor="let turma of turmas">
+    <ion-item>
+      <ion-label>
+        {{turma.name}}
+      </ion-label>
+    </ion-item>
+  </div></ion-list>
 </ion-content>

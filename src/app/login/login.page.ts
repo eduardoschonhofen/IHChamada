@@ -31,7 +31,12 @@ export class LoginPage implements OnInit {
 
   logar()
   {
-    this.loginService.login(this.form.get('usuario').value,this.form.get('senha').value);
+    let cartaoStr:String=this.form.get('usuario').value;
+    if(cartaoStr.length<8)
+    {
+      cartaoStr=cartaoStr.padStart(8,'0');
+    }
+    this.loginService.login(cartaoStr,this.form.get('senha').value);
   }
 
   cadastrar()

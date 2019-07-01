@@ -10,14 +10,21 @@
       <ion-label position="floating">Nome</ion-label>
       <ion-input type="text" formControlName="nome"></ion-input>
     </ion-item>
+    <p class="errorMessage" *ngIf="form.get('nome').hasError('minlength')">Nome com no mínimo 6 caracteres</p>
+
     <ion-item>
       <ion-label position="floating">Senha</ion-label>
       <ion-input type="password" formControlName="senha"></ion-input>
     </ion-item>
+    <p class="errorMessage" *ngIf="form.get('senha').hasError('minlength')">Senha com no mínimo 8 caracteres</p>
+    <p class="errorMessage" *ngIf="form.get('senha').hasError('pattern')">No mínimo um caractere e um número</p>
+
     <ion-item>
       <ion-label position="floating">Cartão da UFRGS</ion-label>
       <ion-input type="number" formControlName="cartao"></ion-input>
     </ion-item>
+    <p class="errorMessage" *ngIf="form.get('cartao').hasError('minlength')">Cartão com no mínimo 6 caracteres</p>
+
     <ion-item>
       <ion-label position="floating">E-mail</ion-label>
       <ion-input type="text" formControlName="email"></ion-input>
@@ -48,5 +55,13 @@
     </ion-col>
   </ion-row>
 
-  <div *ngIf="errors">{{errors}}</div>
+  <div *ngFor="let error of errors">
+    <ion-list >
+      <ion-item>
+        <ion-label>
+          {{error}}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
