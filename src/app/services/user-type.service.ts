@@ -15,4 +15,9 @@ export class UserTypeService {
     this.password=password;
     this.user=user;
   }
+
+  isStudent()
+  {
+    return this.user_type=="Student";
+  }
 }

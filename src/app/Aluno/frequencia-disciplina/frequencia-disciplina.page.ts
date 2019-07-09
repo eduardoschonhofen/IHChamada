@@ -11,20 +11,10 @@ export class FrequenciaDisciplinaPage implements OnInit {
   disciplina;
   frequencias;
   texto;
-  constructor(private router:Router,private route:ActivatedRoute,private disciplinaService:DisciplinaService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params=>{
-      this.disciplina=JSON.parse(params.disciplina);
-      this.texto=`Frequência Disciplina ${this.disciplina.nome}:`;
-      this.disciplinaService.getFrequenciaDisciplina(this.disciplina.id).then(val=>{
-        if(val.data)
-        {
-          this.frequencias=val.data;
-        }
 
-      })
-    })
   }
 
 }

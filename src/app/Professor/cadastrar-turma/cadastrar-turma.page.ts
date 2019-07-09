@@ -46,7 +46,6 @@ export class CadastrarTurmaPage implements OnInit {
 
     this.cadastroDisciplinaService.cadastrar(nome,descricao,inicio,fim,JSON.stringify(obj),senha).then(val=>{
       let data=JSON.parse(val.data);
-
         this.router.navigateByUrl('');
       }
     )

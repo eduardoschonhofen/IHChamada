@@ -1,5 +1,17 @@
 <app-header-menu titulo="Marcar Presença - Gerar QRCode"></app-header-menu>
-<div>
-    <ngx-qrcode *ngIf="qrCode" [qrc-value]="qrCode"></ngx-qrcode>
-</div>
-<ion-button (click)="conectarSocket()">Gerar QRCode</ion-button>
+<ion-content>
+
+    <div>
+        <ngx-qrcode *ngIf="qrCode" [qrc-value]="qrCode"></ngx-qrcode>
+    </div>
+
+</ion-content>
+
+
+<ion-footer no-shadow>
+
+    <ion-toolbar position="bottom">
+
+        <ion-button style="width:100%" (click)="conectarSocket()">Gerar QRCode</ion-button>
+    </ion-toolbar>
+</ion-footer>

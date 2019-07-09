@@ -5,7 +5,7 @@
 
   <ion-list><div *ngFor="let turma of turmas">
     <ion-item>
-      <ion-label>
+      <ion-label (click)="entraTurma(turma.id)">
         {{turma.name}}
       </ion-label>
     </ion-item>

@@ -1,5 +1,5 @@
 
-<app-header-menu titulo="Frequência"></app-header-menu>
+<app-header-menu titulo="Presenças"></app-header-menu>
 
 
 <ion-content>
@@ -8,10 +8,30 @@
       <ion-card-title>Selecione a Disciplina:</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <div *ngFor="let disciplina of disciplinas;let i=index" (click)="selecionaDisciplina(i)">
-        {{disciplina.name}}
+      <ion-list>
+      <div *ngFor="let disciplina of disciplinas;let i=index" (click)="selecionaDisciplina(disciplina)">
+          <ion-item>
+              <ion-label>
+                {{disciplina.name}}
+              </ion-label>
+            </ion-item>
       </div>
+    </ion-list>
 
+    <ion-list>
+        <div *ngFor="let frequencia of frequencias;">
+            <ion-item>
+                <ion-label>
+                  {{frequencia}}
+                </ion-label>
+              </ion-item>
+        </div>
+      </ion-list>
     </ion-card-content>
   </ion-card>
 </ion-content>
+
+
+
+
+

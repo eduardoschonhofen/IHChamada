@@ -4,6 +4,7 @@ import { HTTP } from '@ionic-native/http/ngx';
 import * as ActionCable from 'actioncable';
 import { environment } from 'src/environments/environment';
 import { HttpService } from '../services/httpService/http.service';
+import { UserTypeService } from '../services/user-type.service';
 
 var URL_SOCKET=environment.URL_SOCKET;
 var URL_SCAN=environment.URL_SCAN;
@@ -14,7 +15,7 @@ var URL_SCAN=environment.URL_SCAN;
 })
 export class GeraQRPage implements OnInit {
   qrCode;
-  constructor(private http:HttpService,private qrScanner: QRScanner) { }
+  constructor(private http:HttpService,private qrScanner: QRScanner,private userType:UserTypeService) { }
 
   ngOnInit() {
   }
@@ -23,9 +24,18 @@ export class GeraQRPage implements OnInit {
   conectarSocket()
   {   
      // this.qrCode="321123321";
-      let cable=ActionCable.createConsumer(URL_SOCKET);
-      let conexao=conexaosocket.bind(this,this.http);
-      cable.subscriptions.create('RoomChannel',conexao);
+
+if(this.userType.user_type=="Student")
+{
+  this.qrCode=JSON.stringify({code:this.userType.user,discipline:'1'});
+}
+else
+{
+  let cable=ActionCable.createConsumer(URL_SOCKET);
+  let conexao=conexaosocket.bind(this,this.http);
+  cable.subscriptions.create('RoomChannel',conexao);
+}
+  
 
   }
 }

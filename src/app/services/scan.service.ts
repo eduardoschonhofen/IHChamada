@@ -15,6 +15,6 @@ export class ScanService {
   scan(id)
   {
     let code = JSON.parse(id);
-    return this.http.post(URL_SCAN,{timestamp:code.timestamp,discipline:code.discipline,card_number:this.userType.user},{});
+    return this.http.post(URL_SCAN,{code:code.code,discipline:code.discipline,card_number:this.userType.user},{});
   }
 }

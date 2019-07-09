@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ListarTurmasService } from '../../services/listarTurmasService/listar-turmas.service';
+import { AlertController } from '@ionic/angular';
+import { DisciplinaService } from 'src/app/services/disciplinaService/disciplina.service';
 
 @Component({
   selector: 'app-listar-turmas',
@@ -8,7 +10,7 @@ import { ListarTurmasService } from '../../services/listarTurmasService/listar-t
 })
 export class ListarTurmasPage implements OnInit {
 turmas;
-  constructor(private turmasService:ListarTurmasService) { }
+  constructor(private turmasService:ListarTurmasService,public alertController: AlertController,public disciplina:DisciplinaService) { }
 
   ngOnInit() {
     this.turmasService.listarTurmas().then(val=>{
@@ -18,4 +20,42 @@ turmas;
     })
   }
 
+  entraTurma(id)
+  {
+    this.presentAlertPrompt(id);
+  }
+
+
+
+  async presentAlertPrompt(id) {
+    const alert = await this.alertController.create({
+      header: 'Prompt!',
+      inputs: [
+        {
+          name: 'senha',
+          type: 'text',
+          placeholder: 'Senha:',
+          id:'senha'
+        },
+    
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Confirm Cancel');
+          }
+        }, {
+          text: 'Cadastrar',
+          handler: data => {
+            this.disciplina.entrarTurma(id,data.senha);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
 }

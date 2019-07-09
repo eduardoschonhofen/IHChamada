@@ -1,5 +1,37 @@
 <app-header-menu titulo="Pagina Inicial"></app-header-menu>
 
-<ion-content>
-Deslize para a direita para as opções!
+<ion-content *ngIf="userType.isStudent();else professor">
+    <ion-list>
+         
+                    <ion-list-header>
+                        <ion-label text-wrap>
+                            <ion-text >
+                                <h3>Disciplina:</h3>
+                            </ion-text>
+                        </ion-label>
+                        <ion-text>
+                            <p> Presenças:
+                            </p>
+                        </ion-text>
+                    </ion-list-header>
+                
+        <div *ngFor="let frequencia of disciplinaFreq;">
+            <ion-item>
+                <ion-label text-wrap>
+                    <ion-text color="primary">
+                        <h3>{{frequencia.disciplina.name}}</h3>
+                    </ion-text>
+                </ion-label>
+                <ion-text>
+                    <p> {{frequencia.frequencia}}
+                    </p>
+                </ion-text>
+            </ion-item>
+        </div>
+    </ion-list>
+
+</ion-content>
+
+<ion-content #professor>
+
 </ion-content>

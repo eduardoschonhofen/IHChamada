@@ -32,7 +32,7 @@ export class AppComponent {
       icon: 'list'
     },
     {
-      title: 'Visualizar Frequências',
+      title: 'Visualizar Presenças',
       url: '/frequencia',
       icon: 'list'
     },

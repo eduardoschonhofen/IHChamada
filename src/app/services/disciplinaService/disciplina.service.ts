@@ -14,16 +14,16 @@ export class DisciplinaService {
 
    getDisciplinasMatriculadas()
   {
-    return this.http.get(URL_DISCIPLINA_ALUNO,{},{});
+    return this.http.post(URL_DISCIPLINA_ALUNO,{},{});
   }
   getDisciplinas()
   {
     return this.http.post(URL_DISCIPLINAS,{},{});
   }
 
-  entrarTurma(password)
+  entrarTurma(idDisciplina,password)
   {
-    return this.http.post(URL_ENTRAR_TURMA,{password:password},{});
+    return this.http.post(URL_ENTRAR_TURMA,{id:idDisciplina,password:password},{});
   }
 
   getFrequenciaDisciplina(id)
