@@ -15,18 +15,10 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.form=this.formBuilder.group({
-      usuario:['',[Validators.required,Validators.min(6)]],
-      senha:['',[Validators.required,Validators.min(6)]]
+      usuario:['',[Validators.required,Validators.minLength(6)]],
+      senha:['',[Validators.required,Validators.minLength(4)]]
     })
-/*
-    this.cookieService.getCookie().then(cookie=>{
-      if(cookie)
-      {
-        console.log(cookie);
-        this.router.navigateByUrl('/inicio');
-      }
-    })
-*/
+
   }
 
   logar()

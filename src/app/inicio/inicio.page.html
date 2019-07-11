@@ -1,20 +1,19 @@
-<app-header-menu titulo="Pagina Inicial"></app-header-menu>
-
+<app-header-menu titulo="Resumo"></app-header-menu>
 <ion-content *ngIf="userType.isStudent();else professor">
     <ion-list>
-         
-                    <ion-list-header>
-                        <ion-label text-wrap>
-                            <ion-text >
-                                <h3>Disciplina:</h3>
-                            </ion-text>
-                        </ion-label>
-                        <ion-text>
-                            <p> Presenças:
-                            </p>
-                        </ion-text>
-                    </ion-list-header>
-                
+
+        <ion-list-header>
+            <ion-label text-wrap>
+                <ion-text>
+                    <h3>Disciplina:</h3>
+                </ion-text>
+            </ion-label>
+            <ion-text>
+                <p> Presenças:
+                </p>
+            </ion-text>
+        </ion-list-header>
+
         <div *ngFor="let frequencia of disciplinaFreq;">
             <ion-item>
                 <ion-label text-wrap>
@@ -32,6 +31,9 @@
 
 </ion-content>
 
-<ion-content #professor>
 
-</ion-content>
+<ng-template #professor>
+    <ion-content>
+
+    </ion-content>
+</ng-template>

@@ -29,7 +29,7 @@ turmas;
 
   async presentAlertPrompt(id) {
     const alert = await this.alertController.create({
-      header: 'Prompt!',
+      header: 'Digite a senha:',
       inputs: [
         {
           name: 'senha',

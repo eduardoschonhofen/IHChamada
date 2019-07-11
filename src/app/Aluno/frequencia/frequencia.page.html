@@ -1,4 +1,3 @@
-
 <app-header-menu titulo="Presenças"></app-header-menu>
 
 
@@ -9,29 +8,35 @@
     </ion-card-header>
     <ion-card-content>
       <ion-list>
-      <div *ngFor="let disciplina of disciplinas;let i=index" (click)="selecionaDisciplina(disciplina)">
+        <div *ngFor="let disciplina of disciplinas;let i=index" (click)="selecionaDisciplina(disciplina)">
           <ion-item>
-              <ion-label>
-                {{disciplina.name}}
-              </ion-label>
-            </ion-item>
-      </div>
-    </ion-list>
-
-    <ion-list>
-        <div *ngFor="let frequencia of frequencias;">
-            <ion-item>
-                <ion-label>
-                  {{frequencia}}
-                </ion-label>
-              </ion-item>
+            <ion-label>
+              {{disciplina.name}}
+            </ion-label>
+          </ion-item>
         </div>
       </ion-list>
+      <div *ngIf="frequencias">
+        <ion-list>
+          <div *ngFor="let frequencia of frequencias;">
+            <ion-item>
+              <ion-label>
+                {{frequencia}}
+              </ion-label>
+            </ion-item>
+          </div>
+        </ion-list>
+        <ion-list>
+          <div *ngIf=" frequencias.length==0">
+            <ion-item>
+              <ion-label>
+                Você não possui presenças nesta turma!
+              </ion-label>
+            </ion-item>
+          </div>
+        </ion-list>
+      </div>
+
     </ion-card-content>
   </ion-card>
 </ion-content>
-
-
-
-
-

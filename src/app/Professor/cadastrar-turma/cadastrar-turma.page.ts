@@ -18,11 +18,11 @@ export class CadastrarTurmaPage implements OnInit {
   }
   ngOnInit() {
     this.form=this.formBuilder.group({
-      inicio:['',[Validators.required,Validators.min(6)]],
-      fim:['',[Validators.required,Validators.min(6)]],
-      descricao:['',[Validators.required,Validators.min(6)]],
-      senha:['',[Validators.required,Validators.min(6)]],
-      nome:['',[Validators.required,Validators.min(6)]],
+      inicio:['',[Validators.required]],
+      fim:['',[Validators.required]],
+      descricao:['',[Validators.required,]],
+      senha:['',[Validators.required]],
+      nome:['',[Validators.required]],
     
     })
   }
@@ -46,7 +46,7 @@ export class CadastrarTurmaPage implements OnInit {
 
     this.cadastroDisciplinaService.cadastrar(nome,descricao,inicio,fim,JSON.stringify(obj),senha).then(val=>{
       let data=JSON.parse(val.data);
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('/inicio');
       }
     )
   }

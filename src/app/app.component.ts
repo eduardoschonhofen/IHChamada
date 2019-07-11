@@ -22,30 +22,26 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'Scan',
+      title: 'Escanear Código QR',
       url: '/readQR',
-      icon: 'list'
+      icon: 'barcode'
     },
     {
-      title: 'Gerar QR',
+      title: 'Gerar Código QR',
       url: '/geraQR',
-      icon: 'list'
+      icon: 'finger-print'
     },
     {
       title: 'Visualizar Presenças',
       url: '/frequencia',
-      icon: 'list'
+      icon: 'checkmark-circle'
     },
     {
-      title: 'Visualizar Turmas',
+      title: 'Lista de Disciplinas',
       url: '/listar-turmas',
-      icon: 'list'
+      icon: 'list-box'
     },
-    {
-      title: 'Logout',
-      func: 'logout()',
-      icon: 'list'
-    }];
+];
   }
 
   mudarPageProfessor()
@@ -56,25 +52,21 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'Scan',
+      title: 'Escanear Código QR',
       url: '/readQR',
-      icon: 'list'
+      icon: 'barcode'
     },
     {
-      title: 'Gerar QR',
+      title: 'Gerar Código QR',
       url: '/geraQR',
-      icon: 'list'
+      icon: 'finger-print'
     },
     {
       title: 'Criar Turma',
       url: '/cadastrar-turma',
-      icon: 'list'
+      icon: 'add'
     },
-    {
-      title: 'Logout',
-      func: 'logout()',
-      icon: 'list'
-    }];
+   ];
   }
 
 

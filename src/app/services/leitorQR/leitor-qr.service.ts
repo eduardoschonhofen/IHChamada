@@ -4,6 +4,7 @@ import { Dialogs } from '@ionic-native/dialogs/ngx';
 import { ScanService } from '../scan.service';
 import { Platform } from '@ionic/angular';
 import { TouchSequence } from 'selenium-webdriver';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,12 @@ import { TouchSequence } from 'selenium-webdriver';
 export class LeitorQRService {
    ionApp = <HTMLElement>document.getElementsByTagName('ion-app')[0];
   scanSub;
-  constructor(private qrScanner: QRScanner, private dialog: Dialogs, private scanService: ScanService, private Platform: Platform) { }
+  constructor(private qrScanner: QRScanner, private dialog: Dialogs, private scanService: ScanService, private Platform: Platform,private router:Router) { }
 
   scan() {  // Optionally request the permission early,
     this.showCamera();
 
-    this.qrScanner.prepare()
+    return this.qrScanner.prepare()
       .then((status: QRScannerStatus) => {
         if (status.authorized) {
           // camera permission was granted
@@ -67,6 +68,7 @@ export class LeitorQRService {
     this.scanSub.unsubscribe();
     this.ionApp.style.display='block';
     console.log( this.ionApp.style.display);
+    this.router.navigateByUrl('inicio');
   }
 
   showCamera() {

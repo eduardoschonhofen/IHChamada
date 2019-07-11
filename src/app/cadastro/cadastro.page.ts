@@ -19,7 +19,7 @@ export class CadastroPage implements OnInit {
       email:['',[Validators.required,Validators.minLength(6)]],
       cartao:['',[Validators.required,Validators.minLength(6)]],
       nome:['',[Validators.required,Validators.minLength(6)]],
-      senha:['',[Validators.required,Validators.minLength(8),Validators.pattern(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)]],
+      senha:['',[Validators.required,Validators.minLength(4),Validators.pattern(/([a-z].*\d|\d.*[a-z])/i)]],
       tipo:['Student',Validators.required]
     })
 

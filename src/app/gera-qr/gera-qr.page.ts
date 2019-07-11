@@ -18,6 +18,7 @@ export class GeraQRPage implements OnInit {
   constructor(private http:HttpService,private qrScanner: QRScanner,private userType:UserTypeService) { }
 
   ngOnInit() {
+    this.conectarSocket();
   }
 
 
